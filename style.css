@@ -1,0 +1,163 @@
+body {
+    background-color: rgba(247, 31, 160, 0.1);
+}
+
+p {
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "header header header header header header"
+            "headerTxt headerTxt headerTxt headerTxt headerTxt headerTxt"
+            "menu contentLeft contentLeft contentLeft contentRight contentRight"
+            "footer footer footer footer footer footer";
+    grid-gap: 1px;
+    width: 100%;
+}
+
+.grid-container > div {
+    color: rgba(247, 31, 160, 1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgba(247, 31, 160, 0.1);
+}
+
+.header {
+    grid-area: header;
+    text-align: center;
+    padding: 100px;
+    font-size: 32px;
+}
+
+.headerTxt {
+    grid-area: headerTxt;
+    text-align: center;
+    font-size: 16px;
+}
+
+.menu {
+    grid-area: menu;
+    font-size: 28px;
+    text-align: center;
+    
+}
+
+.menu a {
+    display: grid;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: start;
+    background-color: rgba(247, 31, 160, 0.1);
+    color: rgba(247, 31, 160, 1);
+    
+}
+
+.menu a:hover {
+    background-color: rgba(247, 31, 160, 0.5);
+}
+
+.contentLeft {
+    grid-area: contentLeft;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.contentRight {
+    grid-area: contentRight;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+}
+
+/* Other styles */
+.form {
+    display: grid;
+    text-align: center;
+    margin:0 auto;
+    display:block;
+    text-align:center; 
+}
+
+#itemsNum {
+    padding: 15px;
+    text-align: center;
+    border-radius: 45px;
+    background-color: rgba(247, 31, 160, 0.1);
+    border: 2px solid rgba(247, 31, 160, 0.5);
+}
+
+.cbgrid {
+    display: grid;
+    text-align: left;
+    margin:0 auto;
+    display:block;
+    text-align:center; 
+    
+}
+
+.checkbox {
+    -webkit-appearance: none;
+    background-color: rgba(247, 31, 160, 0.1);
+    border: 1px solid rgba(247, 31, 160, 0.5);
+    border-radius: 4px;
+    padding: 11px;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox:active, .checkbox:checked {
+    background-color: rgba(247, 31, 160, 0.5);
+}
+
+.checkbox:checked:after {
+    content: '\2714';
+    font-size: 14px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+}
+
+.button {
+    display: grid;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 45px;
+    background-color: rgba(247, 31, 160, 0.1);
+    border: 2px solid rgba(247, 31, 160, 0.5);
+    margin:15px auto;
+    display:block;
+    text-align:center; 
+}
+
+.button:hover {
+    background-color: rgba(247, 31, 160, 0.5);
+}
+
+#microTxt {
+    font-size: 11px;
+    color: rgba(247, 31, 160, 0.8);
+    text-align: left;
+    padding-top: 12px;
+}
+
+#comment {
+    background-color: rgba(247, 31, 160, 0.1);
+    border: 1px solid rgba(247, 31, 160, 0.3);
+    border-radius: 45px;
+    text-align: justify;
+    padding: 10px 40px 10px 40px;
+}

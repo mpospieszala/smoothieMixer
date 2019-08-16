@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css"> 
+<title>Smoothie Mixer pre-alfa 1.0</title>
+</head>
+<body>
+<div class="grid-container">
+    <div class="header">Smoothie mixer</div>
+    <div class="headerTxt"><p>Aplikacja do tworzenia przepisów smoothie!</p></div>
+    <div class="menu">Menu
+        <a href="#">Element1</a>
+        <a href="#">Element2</a>
+        <a href="#">Element3</a>
+    </div>
+    <div class="contentLeft"><h2>Twoje smoothie!</h2>
+        <div class="form" >
+            <p>Ile owoców/warzyw ma mieć twoje smoothie*?</p>
+            <input id="itemsNum" type="number" min="1" max="5" placeholder="0">
+            <div class="cbgrid">
+                <p>Wybierz składniki smoothie:</p>
+                <label>Owoce<input type="checkbox" value="owoce" class="checkbox"></label>
+                <label>Warzywa<input type="checkbox" value="warzywa" class="checkbox"></label>
+                <label>Dodatki<input type="checkbox" value="dodatki" class="checkbox"></label>
+            </div>
+            <input type="submit" value="Mieszaj" class="button">
+        </div>
+        <p id="microTxt">* Do standardowego smoothie wystarczą 2 owoce/warzywa</p>
+    </div>
+
+    <div class="contentRight">
+        <h2>Komentarz</h2>
+        <br><textarea id="comment" rows="10" cols="50" maxlength="200"></textarea>
+    </div>
+    <div class="footer">© 2019 Magdalena Pospieszała | All Rights Reserved</div>
+</div>
+</body>
+</html>
