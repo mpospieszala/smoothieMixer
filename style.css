@@ -2,11 +2,19 @@ body {
     background-color: rgba(244, 244, 244, 1);
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 p {
     color: rgba(0, 0, 0, 0.6);
     text-align: center;
+    font-size: 18px;
+    
+}
+
+h1 {
+    color: rgba(244, 244, 244, 1);
+    font-size: 80px;
 }
 
 h2 {
@@ -14,8 +22,12 @@ h2 {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 hr {
-    background-color: rgba(255, 215, 69, 0.3); 
+    background-color: rgba(244, 244, 244, 0.4); 
     height: 1px; 
     border: 0;
     margin-left: 30px;
@@ -25,49 +37,46 @@ hr {
 .grid-container {
     display: grid;
     grid-template-areas: "header header header header header header"
-            "headerTxt headerTxt headerTxt headerTxt headerTxt headerTxt"
             ". . menu menu . ."
+            ". . content-container content-container . ."
             ". . contentLeft contentLeft . ."
             ". . contentRight contentRight . ."
             "footer footer footer footer footer footer";
-    grid-gap: 1px;
+    grid-gap: 0px;
+    background-image: url("./media/header.jpg");
 }
 
 .grid-container > div {
     color: rgba(41, 26, 55, 1);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgba(255, 243, 166, 0.3);
+    background-color: rgba(255, 243, 166, 0.5);
+}
+
+.content-container {
+    grid-area: content-container;
 }
 
 .header {
     grid-area: header;
     text-align: center;
     font-size: 32px;
-    background-color: rgba(255, 215, 69, 1);
-}
-
-.headerTxt {
-    grid-area: headerTxt;
-    text-align: center;
-    font-size: 16px;
 }
 
 .menu {
     grid-area: menu;
-    font-size: 28px;
+    font-size: 18px;
     text-align: center;
-    
+    padding: 12px;
 }
 
 .menu a {
-    font-size: 20px;
-    text-decoration: none;
     text-align: start;
-    background-color: rgba(255, 215, 69, 1);
-    color: black;
+    background-color: rgba(244, 244, 244, 0.4);
+    color: rgba(41, 26, 55, 1);
     border: 1px, solid;
     border-radius: 45px;
-    padding: 5px;
+    padding: 8px;
+    margin: 10px auto;
 }
 
 .menu a:hover {
@@ -108,7 +117,7 @@ hr {
     padding: 10px;
     text-align: center;
     border-radius: 45px;
-    background-color: rgba(255, 215, 69, 1);
+    background-color: rgba(244, 244, 244, 0.1);
     border: 1px solid ;
     border-color: rgba(244, 244, 244, 1);
 }
@@ -142,6 +151,10 @@ hr {
     background-color: rgba(255, 215, 69, 1);
 }
 
+.checkbox:disabled {
+    background-color: rgba(255, 215, 69, 0.6);
+}
+
 .checkbox:checked:after {
     content: '\2714';
     font-size: 14px;
@@ -151,15 +164,12 @@ hr {
 }
 
 .button {
-    display: grid;
-    margin-top: 10px;
     padding: 10px;
-    width: 100px;
     border-radius: 45px;
     background-color: rgba(255, 215, 69, 1);
     border: 1px solid ;
     border-color: rgba(244, 244, 244, 1);
-    margin:15px auto;
+    margin:20px auto;
     display:block;
     text-align:center; 
 }
@@ -175,7 +185,7 @@ hr {
 }
 
 #comment {
-    background-color: rgba(255, 215, 69, 0.5);
+    background-color: rgba(244, 244, 244, 0.1);
     border: 1px solid ;
     border-radius: 45px;
     text-align: justify;
