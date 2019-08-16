@@ -7,31 +7,35 @@
 </head>
 <body>
 <div class="grid-container">
-    <div class="header">Smoothie mixer</div>
+    <div class="header"><h1>SMOOTHIE MIXER</h1></div>
     <div class="headerTxt"><p>Aplikacja do tworzenia przepisów smoothie!</p></div>
-    <div class="menu">Menu
-        <a href="#">Element1</a>
-        <a href="#">Element2</a>
-        <a href="#">Element3</a>
+    <div class="menu">
+        <a href="#">OWOCE</a>
+        <a href="#">WARZYWA</a>
+        <a href="#">DODATKI</a>
+        <a href="#">DODATKI PŁYNNE</a>
     </div>
-    <div class="contentLeft"><h2>Twoje smoothie!</h2>
+    <div class="contentLeft"><h2>TWOJE SMOOTHIE!</h2>
         <div class="form" >
             <p>Ile owoców/warzyw ma mieć twoje smoothie*?</p>
             <input id="itemsNum" type="number" min="1" max="5" placeholder="0">
             <div class="cbgrid">
                 <p>Wybierz składniki smoothie:</p>
-                <label>Owoce<input type="checkbox" value="owoce" class="checkbox"></label>
-                <label>Warzywa<input type="checkbox" value="warzywa" class="checkbox"></label>
-                <label>Dodatki<input type="checkbox" value="dodatki" class="checkbox"></label>
+                <label id="fruits">OWOCE<input type="checkbox" value="owoce" class="checkbox"></label>
+                <label id="vegetables">WARZYWA<input type="checkbox" value="warzywa" class="checkbox" ></label>
+                <label id="extras">DODATKI<input type="checkbox" value="dodatki" class="checkbox" ></label>
+                <label id="liquids">DODATKI PŁYNNE<input type="checkbox" value="dodatkiPlynne" class="checkbox" ></label>
             </div>
-            <input type="submit" value="Mieszaj" class="button">
+            <input type="submit" value="MIESZAJ" class="button">
         </div>
-        <p id="microTxt">* Do standardowego smoothie wystarczą 2 owoce/warzywa</p>
+        
     </div>
 
     <div class="contentRight">
-        <h2>Komentarz</h2>
+        <hr>
+        <h2>GOTOWY PRZEPIS:</h2>
         <br><textarea id="comment" rows="10" cols="50" maxlength="200"></textarea>
+        <p id="microTxt">* Do standardowego smoothie wystarczą 2 owoce/warzywa</p>
     </div>
     <div class="footer">© 2019 Magdalena Pospieszała | All Rights Reserved</div>
 </div>

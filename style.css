@@ -1,5 +1,7 @@
 body {
-    background-color: rgba(247, 31, 160, 0.1);
+    background-color: rgba(244, 244, 244, 1);
+    width: 100%;
+    height: 100%;
 }
 
 p {
@@ -12,27 +14,36 @@ h2 {
     text-align: center;
 }
 
+hr {
+    background-color: rgba(255, 215, 69, 0.3); 
+    height: 1px; 
+    border: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .grid-container {
     display: grid;
     grid-template-areas: "header header header header header header"
             "headerTxt headerTxt headerTxt headerTxt headerTxt headerTxt"
-            "menu contentLeft contentLeft contentLeft contentRight contentRight"
+            ". . menu menu . ."
+            ". . contentLeft contentLeft . ."
+            ". . contentRight contentRight . ."
             "footer footer footer footer footer footer";
     grid-gap: 1px;
-    width: 100%;
 }
 
 .grid-container > div {
-    color: rgba(247, 31, 160, 1);
+    color: rgba(41, 26, 55, 1);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgba(247, 31, 160, 0.1);
+    background-color: rgba(255, 243, 166, 0.3);
 }
 
 .header {
     grid-area: header;
     text-align: center;
-    padding: 100px;
     font-size: 32px;
+    background-color: rgba(255, 215, 69, 1);
 }
 
 .headerTxt {
@@ -49,17 +60,18 @@ h2 {
 }
 
 .menu a {
-    display: grid;
     font-size: 20px;
     text-decoration: none;
     text-align: start;
-    background-color: rgba(247, 31, 160, 0.1);
-    color: rgba(247, 31, 160, 1);
-    
+    background-color: rgba(255, 215, 69, 1);
+    color: black;
+    border: 1px, solid;
+    border-radius: 45px;
+    padding: 5px;
 }
 
 .menu a:hover {
-    background-color: rgba(247, 31, 160, 0.5);
+    background-color: rgba(206, 233, 42, 1);
 }
 
 .contentLeft {
@@ -80,6 +92,7 @@ h2 {
     text-align: center;
     padding: 30px;
     font-size: 14px;
+    background-color: rgba(255, 215, 69, 1);
 }
 
 /* Other styles */
@@ -92,34 +105,41 @@ h2 {
 }
 
 #itemsNum {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     border-radius: 45px;
-    background-color: rgba(247, 31, 160, 0.1);
-    border: 2px solid rgba(247, 31, 160, 0.5);
+    background-color: rgba(255, 215, 69, 1);
+    border: 1px solid ;
+    border-color: rgba(244, 244, 244, 1);
 }
 
 .cbgrid {
     display: grid;
-    text-align: left;
+    text-align: center;
     margin:0 auto;
-    display:block;
-    text-align:center; 
-    
+}
+
+#fruits,
+#vegetables,
+#extras,
+#liquids {
+    display: block;
+    margin-left: 35%;
+    text-align: left;
 }
 
 .checkbox {
     -webkit-appearance: none;
-    background-color: rgba(247, 31, 160, 0.1);
-    border: 1px solid rgba(247, 31, 160, 0.5);
+    border: 1px solid ;
     border-radius: 4px;
-    padding: 11px;
+    padding: 10px;
     display: inline-block;
     position: relative;
+    margin-top: 10px;
 }
 
 .checkbox:active, .checkbox:checked {
-    background-color: rgba(247, 31, 160, 0.5);
+    background-color: rgba(255, 215, 69, 1);
 }
 
 .checkbox:checked:after {
@@ -136,28 +156,29 @@ h2 {
     padding: 10px;
     width: 100px;
     border-radius: 45px;
-    background-color: rgba(247, 31, 160, 0.1);
-    border: 2px solid rgba(247, 31, 160, 0.5);
+    background-color: rgba(255, 215, 69, 1);
+    border: 1px solid ;
+    border-color: rgba(244, 244, 244, 1);
     margin:15px auto;
     display:block;
     text-align:center; 
 }
 
 .button:hover {
-    background-color: rgba(247, 31, 160, 0.5);
+    background-color: rgba(206, 233, 42, 1);
 }
 
 #microTxt {
     font-size: 11px;
-    color: rgba(247, 31, 160, 0.8);
     text-align: left;
     padding-top: 12px;
 }
 
 #comment {
-    background-color: rgba(247, 31, 160, 0.1);
-    border: 1px solid rgba(247, 31, 160, 0.3);
+    background-color: rgba(255, 215, 69, 0.5);
+    border: 1px solid ;
     border-radius: 45px;
     text-align: justify;
     padding: 10px 40px 10px 40px;
+    border-color: rgba(244, 244, 244, 1);
 }
