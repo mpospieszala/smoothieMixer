@@ -20,19 +20,20 @@
         <a href="./liquids.html">DODATKI PŁYNNE</a>
     </div>
     <div class="contentLeft"><h2>TWOJE SMOOTHIE!</h2>
-        <div class="form" >
-            <p>Ile owoców/warzyw ma mieć twoje smoothie*?</p>
-            <input id="itemsNum" type="number" min="1" max="3" placeholder="0">
-            <div class="cbgrid">
-                <p>Wybierz składniki smoothie:</p>
-                <label id="fruits"><input type="checkbox" value="owoce" class="checkbox">OWOCE</label>
-                <label id="vegetables"><input type="checkbox" value="warzywa" class="checkbox" >WARZYWA</label>
-                <label id="extras"><input type="checkbox" value="dodatki" class="checkbox" >DODATKI</label>
-                <label id="liquids"><input type="checkbox" value="dodatkiPlynne" class="checkbox" checked disabled>DODATKI PŁYNNE</label>
+        <form>
+            <div class="form" >
+                <p>Ile owoców/warzyw ma mieć twoje smoothie*?</p>
+                <input id="itemsNum" type="number" min="1" max="3" placeholder="0" required>
+                <div class="cbgrid">
+                    <p>Wybierz składniki smoothie:</p>
+                    <label id="fruits"><input type="checkbox" id="fruit" value="owoce" class="checkbox">OWOCE</label>
+                    <label id="vegetables"><input type="checkbox" id="vegetable" value="warzywa" class="checkbox" >WARZYWA</label>
+                    <label id="extras"><input type="checkbox" id="extra" value="dodatki" class="checkbox" >DODATKI</label>
+                    <label id="liquids"><input type="checkbox" id="liquid" value="dodatkiPlynne" class="checkbox" checked disabled>DODATKI PŁYNNE</label>
+                </div>
+                <input type="submit" value="MIESZAJ" class="button" onclick="generateRecipe()">
             </div>
-            <input type="submit" value="MIESZAJ" class="button">
-        </div>
-        
+        </form>
     </div>
 
     <div class="contentRight">
