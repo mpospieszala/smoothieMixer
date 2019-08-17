@@ -3,6 +3,12 @@ var vegetables = ["jarmuż", "szpinak", "marchewka"];
 var extras = ["orzechy laskowe", "odżywka białkowa waniliowa"];
 var liquids = ["mleko", "woda", "mleko kokosowe"];
 
+var i;
+
+function getItemNum(elementId) {
+    var numItemVal = document.getElementById(elementId).value;
+    return numItemVal;
+};
 
 function getRandomFruit() {
     return fruits[Math.floor(Math.random() * fruits.length)];
@@ -20,32 +26,37 @@ function getRandomLiquid() {
     return liquids[Math.floor(Math.random() * liquids.length)];
 }
 
+
 function generateRecipe() {
     var fruitChb = document.getElementById("fruit").checked;
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
     var liquidChb = document.getElementById("liquid").checked;
-    var numItemVal = document.getElementById("itemsNum").value;
-    console.log(numItemVal);
+    
+    var fruitArray = [];
 
-    if(numItemVal=="") {
-        document.getElementById("comment").value = "Błąd! Nie wybrałeś liczby składników!"
+    if(getItemNum("itemsNum")=="" && (fruitChb != true || vegetableChb != true)) {
+        document.getElementById("comment").value = "Błąd!"
+        event.preventDefault();
     }
-    else if(numItemVal>="1") {
+    else if(getItemNum("itemsNum")>="1") {
         if(fruitChb) {
-            document.getElementById("comment").value = getRandomFruit();
+            for(i=0; i < getItemNum("itemsNum"); i ++) {
+                fruitArray.push(getRandomFruit() + "\n");
+            };
+            document.getElementById("comment").value = fruitArray+ getRandomLiquid()
             event.preventDefault();
         }
         else if(vegetableChb) {
-            document.getElementById("comment").value = getRandomVegetable();
+            document.getElementById("comment").value = getRandomVegetable() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(extraChb){
-            document.getElementById("comment").value = getRandomExtra();
+            document.getElementById("comment").value = getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else {
-            document.getElementById("comment").value = "Zaznacz któryś checkbox";
+            document.getElementById("comment").value = "Wybierz składniki!";
             event.preventDefault();
         };
     };
