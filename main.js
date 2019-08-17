@@ -11,7 +11,8 @@ function getItemNum(elementId) {
 };
 
 function getRandomFruit() {
-    return fruits[Math.floor(Math.random() * fruits.length)];
+    var item = fruits[Math.floor(Math.random() * fruits.length)];
+    return item;
 }
 
 function getRandomVegetable() {
@@ -33,22 +34,25 @@ function generateRecipe() {
     var extraChb = document.getElementById("extra").checked;
     var liquidChb = document.getElementById("liquid").checked;
     
-    var fruitArray = [];
+    var randomElementsArray = [];
 
     if(getItemNum("itemsNum")=="" && (fruitChb != true || vegetableChb != true)) {
         document.getElementById("comment").value = "Błąd!"
         event.preventDefault();
     }
     else if(getItemNum("itemsNum")>="1") {
-        if(fruitChb) {
-            for(i=0; i < getItemNum("itemsNum"); i ++) {
-                fruitArray.push(getRandomFruit() + "\n");
+        if(fruitChb && vegetableChb != true) {
+            for(i=0; i < getItemNum("itemsNum"); i++) {
+                randomElementsArray.push(getRandomFruit());
             };
-            document.getElementById("comment").value = fruitArray+ getRandomLiquid()
+            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid()
             event.preventDefault();
         }
-        else if(vegetableChb) {
-            document.getElementById("comment").value = getRandomVegetable() + "\n" + getRandomLiquid();
+        else if(vegetableChb && fruitChb) {
+            for(i=0; i < getItemNum("itemsNum"); i++){
+                randomElementsArray.push(getRandomFruit());
+            };
+            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(extraChb){
