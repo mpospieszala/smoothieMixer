@@ -25,11 +25,28 @@ function generateRecipe() {
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
     var liquidChb = document.getElementById("liquid").checked;
+    var numItemVal = document.getElementById("itemsNum").value;
+    console.log(numItemVal);
 
-    if (fruitChb) {
-        document.getElementById("comment").value = getRandomFruit();
+    if(numItemVal=="") {
+        document.getElementById("comment").value = "Błąd! Nie wybrałeś liczby składników!"
     }
-    else {
-        document.getElementById("comment").value = "Zaznacz owoc";
+    else if(numItemVal>="1") {
+        if(fruitChb) {
+            document.getElementById("comment").value = getRandomFruit();
+            event.preventDefault();
+        }
+        else if(vegetableChb) {
+            document.getElementById("comment").value = getRandomVegetable();
+            event.preventDefault();
+        }
+        else if(extraChb){
+            document.getElementById("comment").value = getRandomExtra();
+            event.preventDefault();
+        }
+        else {
+            document.getElementById("comment").value = "Zaznacz któryś checkbox";
+            event.preventDefault();
+        };
     };
 }

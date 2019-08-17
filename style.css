@@ -3,6 +3,12 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-image: url("./media/header.jpg") ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 p {
@@ -13,7 +19,7 @@ p {
 }
 
 h1 {
-    color: rgba(244, 244, 244, 0.9);
+    color: rgba(244, 244, 244, 1);
     font-size: 80px;
     border: 1px solid;
     display: inline-block;
@@ -46,7 +52,7 @@ hr {
             ". . contentRight contentRight . ."
             "footer footer footer footer footer footer";
     grid-gap: 0px;
-    background-image: url("./media/header.jpg");
+
 }
 
 .grid-container > div {
