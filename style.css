@@ -1,3 +1,4 @@
+
 body {
     background-color: rgba(244, 244, 244, 1);
     width: 100%;
@@ -12,7 +13,7 @@ body {
 }
 
 p {
-    color: rgba(0, 0, 0, 1);
+    color: rgba(41, 26, 55, 1);
     text-align: center;
     font-size: 18px;
     
@@ -201,4 +202,15 @@ hr {
     text-align: justify;
     padding: 10px 40px 10px 40px;
     border-color: rgba(244, 244, 244, 1);
+}
+
+.errorMsg {
+    display: none;
+    background-color: rgba(242, 28, 28, 0.5);
+    color: rgba(244, 244, 244, 1);
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 400px;
+    align-items: center;
+    text-align: center;
 }
