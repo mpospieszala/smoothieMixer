@@ -91,19 +91,18 @@ function generateRecipe(){
 };
 
 function errorMsgs(msg){
-    document.getElementById("errorMsg").style.display = "block";
-    document.getElementById("errorMsg").innerHTML = msg;
-    fade();
+    var element = document.getElementsByClassName("errorMsg");
+    var x = document.getElementsByClassName("closeBtn")[0].textContent;
+
+    for(i=0; i<element.length; i++){
+        element[i].style.display = "block";
+    };
+    document.getElementsByClassName("errorMsg")[0].innerHTML = msg + x;
 };
 
-
-function fade(){
-    var errorBox = document.getElementById("errorMsg");
-    opacity -= 0.1;
-    if(opacity < 0){
-        opacity = 1
-        return;
+function closeBtn(){
+    var x = document.getElementsByClassName("errorMsg")[0];
+    if(x.style.display === "block"){
+        x.style.display = "none";
     };
-    errorBox.style.opacity = opacity;
-    setTimeout(fade, 300);
 };

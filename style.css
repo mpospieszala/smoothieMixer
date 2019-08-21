@@ -205,12 +205,19 @@ hr {
 }
 
 .errorMsg {
-    display: none;
     background-color: rgba(242, 28, 28, 0.5);
     color: rgba(244, 244, 244, 1);
-    padding: 10px;
+    padding: 20px;
     margin: 10px auto;
     max-width: 400px;
     align-items: center;
     text-align: center;
+}
+
+.closeBtn {
+    float: right;
+}
+
+.closeBtn:hover {
+    color: black;
 }
