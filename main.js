@@ -5,30 +5,36 @@ var liquids = ["mleko", "woda", "mleko kokosowe"];
 var i;
 var opacity = 1;
 
-function getItemNum(elementId){
+function getItemNum(elementId)
+{
     var numItemVal = document.getElementById(elementId).value;
     return numItemVal;
 };
 
-function getRandomFruit(){
+function getRandomFruit()
+{
     var item = fruits[Math.floor(Math.random() * fruits.length)];
     return item;
 };
 
-function getRandomVegetable(){
+function getRandomVegetable()
+{
     return vegetables[Math.floor(Math.random() * vegetables.length)];
 };
 
-function getRandomExtra(){
+function getRandomExtra()
+{
     return extras[Math.floor(Math.random() * extras.length)];
 };
 
-function getRandomLiquid(){
+function getRandomLiquid()
+{
     return liquids[Math.floor(Math.random() * liquids.length)];
 };
 
 
-function generateRecipe(){
+function generateRecipe()
+{
     var fruitChb = document.getElementById("fruit").checked;
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
@@ -36,73 +42,94 @@ function generateRecipe(){
     
     var randomElementsArray = [];
 
-    if(getItemNum("itemsNum")===""){
-        errorMsgs("Błąd!");
+    if(getItemNum("itemsNum")==="")
+    {
+        errorMsgs("Błąd! ");
         event.preventDefault();
     }
-    else if(getItemNum("itemsNum")>="1"){
-        if(fruitChb && vegetableChb != true && extraChb != true){
-            for(i=0; i<getItemNum("itemsNum"); i++){
+    else if(getItemNum("itemsNum")>="1")
+    {
+        if(fruitChb && vegetableChb != true && extraChb != true)
+        {
+            for(i=0; i<getItemNum("itemsNum"); i++)
+            {
                 randomElementsArray.push(getRandomFruit());
             };
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid()
             event.preventDefault();
         }
-        else if(fruitChb != true && vegetableChb && extraChb != true){
-            for(i=0; i<getItemNum("itemsNum"); i++ ){
+        else if(fruitChb != true && vegetableChb && extraChb != true)
+        {
+            for(i=0; i<getItemNum("itemsNum"); i++ )
+            {
                 randomElementsArray.push(getRandomVegetable());
             }
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid();
             event.preventDefault();
         }
-        else if(fruitChb && vegetableChb && extraChb != true){
-            for(i=1; i<getItemNum("itemsNum"); i++){
+        else if(fruitChb && vegetableChb && extraChb != true)
+        {
+            for(i=1; i<getItemNum("itemsNum"); i++)
+            {
                 randomElementsArray.push(getRandomFruit());
             };
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
-        else if(fruitChb && vegetableChb != true && extraChb){
-            for(i=0; i<getItemNum("itemsNum"); i++){
+        else if(fruitChb && vegetableChb != true && extraChb)
+        {
+            for(i=0; i<getItemNum("itemsNum"); i++)
+            {
                 randomElementsArray.push(getRandomFruit());
             };
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
-        else if(fruitChb != true && vegetableChb && extraChb){
-            for(i=0; i<getItemNum("itemsNum"); i++){
+        else if(fruitChb != true && vegetableChb && extraChb)
+        {
+            for(i=0; i<getItemNum("itemsNum"); i++)
+            {
                 randomElementsArray.push(getRandomVegetable());
             }
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
-        else if(fruitChb && vegetableChb && extraChb){
-            for(i=1; i<getItemNum("itemsNum"); i++){
+        else if(fruitChb && vegetableChb && extraChb)
+        {
+            for(i=1; i<getItemNum("itemsNum"); i++)
+            {
                 randomElementsArray.push(getRandomFruit());
             };
             document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
-        else{
+        else
+        {
             errorMsgs("Wybierz składniki (nie tylko same dodatki ;) ) Nie chcesz mieć smoothie z samych orzeszków!") ;
             event.preventDefault();
         };
     };
 };
 
-function errorMsgs(msg){
+function errorMsgs(msg)
+{
     var element = document.getElementsByClassName("errorMsg");
-    var x = document.getElementsByClassName("closeBtn")[0].textContent;
+    var test = "<span class=\"closeBtn\" onclick=\"closeBtn()\">&#10006;</span>";
 
-    for(i=0; i<element.length; i++){
+    for(i=0; i<element.length; i++)
+    {
         element[i].style.display = "block";
     };
-    document.getElementsByClassName("errorMsg")[0].innerHTML = msg + x;
+    document.getElementsByClassName("errorMsg")[0].innerHTML = msg + test;
 };
 
-function closeBtn(){
+function closeBtn()
+{
     var x = document.getElementsByClassName("errorMsg")[0];
-    if(x.style.display === "block"){
+
+    event.preventDefault();
+    if(x.style.display === "block")
+    {
         x.style.display = "none";
     };
 };
