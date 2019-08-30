@@ -195,15 +195,6 @@ hr {
     padding-top: 12px;
 }
 
-#recipe {
-    background-color: rgba(244, 244, 244, 0.1);
-    border: 1px solid ;
-    border-radius: 45px;
-    text-align: justify;
-    padding: 10px 40px 10px 40px;
-    border-color: rgba(244, 244, 244, 1);
-}
-
 .errorMsg {
     background-color: rgba(242, 28, 28, 0.5);
     color: rgba(244, 244, 244, 1);
@@ -226,4 +217,5 @@ hr {
     border: 1px solid;
     border-color: rgba(244, 244, 244, 1);
     text-align: justify;
+    margin: 20px auto;
 }
