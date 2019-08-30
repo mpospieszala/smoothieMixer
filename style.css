@@ -195,7 +195,7 @@ hr {
     padding-top: 12px;
 }
 
-#comment {
+#recipe {
     background-color: rgba(244, 244, 244, 0.1);
     border: 1px solid ;
     border-radius: 45px;
@@ -220,4 +220,10 @@ hr {
 
 .closeBtn:hover {
     color: black;
+}
+
+.recipe {
+    border: 1px solid;
+    border-color: rgba(244, 244, 244, 1);
+    text-align: justify;
 }
