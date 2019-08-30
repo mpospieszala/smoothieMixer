@@ -44,6 +44,18 @@ hr {
     margin-right: 30px;
 }
 
+li {
+    list-style-type: none;
+}
+
+li:before {
+    content: "\f094";
+    font-family: 'FontAwesome';
+    font-size: 120%;
+    padding: 10px;
+    opacity: 0.5;
+}
+
 .grid-container {
     display: grid;
     grid-template-areas: "header header header header header header"
