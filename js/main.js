@@ -38,7 +38,6 @@ function generateRecipe()
     var fruitChb = document.getElementById("fruit").checked;
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
-    var liquidChb = document.getElementById("liquid").checked;
     
     var randomElementsArray = [];
 
@@ -53,54 +52,54 @@ function generateRecipe()
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit());
+                randomElementsArray.push(getRandomFruit().replace("","<li>"));
             };
-            document.getElementsByClassName("recipe")[0].innerHTML = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid()
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
         }
         else if(fruitChb != true && vegetableChb && extraChb != true)
         {
             for(i=0; i<getItemNum("itemsNum"); i++ )
             {
-                randomElementsArray.push(getRandomVegetable());
+                randomElementsArray.push(getRandomVegetable().replace("","<li>"));
             }
-            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid();
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb && extraChb != true)
         {
             for(i=1; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit());
+                randomElementsArray.push(getRandomFruit().replace("","<li>"));
             };
-            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomLiquid();
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomVegetable() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
+
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb != true && extraChb)
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit());
+                randomElementsArray.push(getRandomFruit().replace("","<li>"));
             };
-            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
-            event.preventDefault();
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
         }
         else if(fruitChb != true && vegetableChb && extraChb)
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomVegetable());
+                randomElementsArray.push(getRandomVegetable().replace("","<li>"));
             }
-            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb && extraChb)
         {
             for(i=1; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit());
+                randomElementsArray.push(getRandomFruit().replace("","<li>"));
             };
-            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
+            document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomVegetable() + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
         }
         else
@@ -133,3 +132,14 @@ function closeBtn()
         x.style.display = "none";
     };
 };
+
+function showRecipe()
+{
+    var x = document.getElementsByClassName("recipe")[0];
+    event.preventDefault();
+    if(x.style.display === "none")
+    {
+        x.style.display = "block";
+    }
+};
+
