@@ -55,7 +55,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomFruit());
             };
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid()
+            document.getElementsByClassName("recipe")[0].innerHTML = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid()
             event.preventDefault();
         }
         else if(fruitChb != true && vegetableChb && extraChb != true)
@@ -64,7 +64,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomVegetable());
             }
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid();
+            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb && extraChb != true)
@@ -73,7 +73,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomFruit());
             };
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomLiquid();
+            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb != true && extraChb)
@@ -82,7 +82,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomFruit());
             };
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
+            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(fruitChb != true && vegetableChb && extraChb)
@@ -91,7 +91,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomVegetable());
             }
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
+            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else if(fruitChb && vegetableChb && extraChb)
@@ -100,7 +100,7 @@ function generateRecipe()
             {
                 randomElementsArray.push(getRandomFruit());
             };
-            document.getElementById("comment").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
+            document.getElementById("recipe").value = randomElementsArray.join("\r\n") + "\n" + getRandomVegetable() + "\n" + getRandomExtra() + "\n" + getRandomLiquid();
             event.preventDefault();
         }
         else
