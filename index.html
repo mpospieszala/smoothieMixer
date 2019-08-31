@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="style.css"> 
 <script src="https://kit.fontawesome.com/e3d9a984e1.js"></script>
 <script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/style.js"></script>
 <title>Smoothie Mixer pre-alfa 1.0</title>
 </head>
 <body>
@@ -15,12 +16,17 @@
     </div>
     
     <div class="menu">
-        <a href="./fruits.html">OWOCE</a>
-        <a href="./vegetables.html">WARZYWA</a>
-        <a href="./extras.html">DODATKI</a>
-        <a href="./liquids.html">DODATKI PŁYNNE</a>
+        <div class="dropdown" onclick="dropdown()">
+            <div class="dropdownContent"  id="dropdownContent">
+                <a href="./fruits.html">OWOCE</a>
+                <a href="./vegetables.html">WARZYWA</a>
+                <a href="./extras.html">DODATKI</a>
+                <a href="./liquids.html">DODATKI PŁYNNE</a>
+            </div>
+        </div>
     </div>
-    <div class="contentLeft"><h2>TWOJE SMOOTHIE!</h2>
+
+    <div class="contentUp"><h2>TWOJE SMOOTHIE!</h2>
         <form>
             <div class="form" >
                 <p>Ile owoców/warzyw ma mieć twoje smoothie*?</p>
@@ -38,12 +44,13 @@
         </form>
     </div>
 
-    <div class="contentRight">
+    <div class="contentDown">
         <hr>
         <h2>GOTOWY PRZEPIS:</h2>
         <div class="recipe" ></div>
         <p id="microTxt">* Do standardowego smoothie wystarczą 2 owoce/warzywa</p>
     </div>
+
     <div class="footer">© 2019 Magdalena Pospieszała | All Rights Reserved</div>
 </div>
 </body>
