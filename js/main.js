@@ -1,5 +1,6 @@
 var i;
 var opacity = 1;
+var randomElementsArray = [];
 
 function getItemNum(elementId)
 {
@@ -29,13 +30,14 @@ function getRandomLiquid()
 };
 
 
+
 function generateRecipe()
 {
     var fruitChb = document.getElementById("fruit").checked;
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
     
-    var randomElementsArray = [];
+    randomElementsArray = []; 
 
     if(getItemNum("itemsNum")==="")
     {
@@ -48,7 +50,7 @@ function generateRecipe()
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit().replace("","<li>"));
+                getRandomElement(getRandomFruit());
             };
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
@@ -57,7 +59,7 @@ function generateRecipe()
         {
             for(i=0; i<getItemNum("itemsNum"); i++ )
             {
-                randomElementsArray.push(getRandomVegetable().replace("","<li>"));
+                getRandomElement(getRandomVegetable());
             }
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
@@ -66,7 +68,7 @@ function generateRecipe()
         {
             for(i=1; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit().replace("","<li>"));
+                getRandomElement(getRandomFruit());
             };
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomVegetable() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
 
@@ -76,15 +78,16 @@ function generateRecipe()
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit().replace("","<li>"));
+                getRandomElement(getRandomFruit());
             };
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
+            event.preventDefault();
         }
         else if(fruitChb != true && vegetableChb && extraChb)
         {
             for(i=0; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomVegetable().replace("","<li>"));
+                getRandomElement(getRandomVegetable());
             }
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
@@ -93,7 +96,7 @@ function generateRecipe()
         {
             for(i=1; i<getItemNum("itemsNum"); i++)
             {
-                randomElementsArray.push(getRandomFruit().replace("","<li>"));
+                getRandomElement(getRandomFruit());
             };
             document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray + "</li>" + "<li>" + getRandomVegetable() + "</li>" + "<li>" + getRandomExtra() + "</li>" + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
             event.preventDefault();
@@ -139,3 +142,7 @@ function showRecipe()
     }
 };
 
+function getRandomElement(element)
+{
+    randomElementsArray.push(element.replace("","<li>"));
+};
