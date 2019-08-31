@@ -48,7 +48,7 @@ li {
     list-style-type: none;
 }
 
-li:before {
+li::before {
     content: "\f094";
     font-family: 'FontAwesome';
     font-size: 120%;
@@ -60,12 +60,12 @@ li:before {
     display: grid;
     grid-template-areas: "header header header header header header"
             ". . menu menu . ."
+            ". . contentUp contentUp . ."
+            ". . contentDown contentDown . ."
             ". . content-container content-container . ."
-            ". . contentLeft contentLeft . ."
-            ". . contentRight contentRight . ."
             "footer footer footer footer footer footer";
     grid-gap: 0px;
-
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .grid-container > div {
@@ -74,9 +74,6 @@ li:before {
     background-color: rgba(255, 243, 166, 0.5);
 }
 
-.content-container {
-    grid-area: content-container;
-}
 
 .header {
     grid-area: header;
@@ -92,28 +89,54 @@ li:before {
 }
 
 .menu a {
-    text-align: start;
-    background-color: rgba(244, 244, 244, 0.4);
+    background-color: rgba(244, 244, 244, 1);
     color: rgba(41, 26, 55, 1);
     border: 1px, solid;
-    border-radius: 45px;
-    padding: 8px;
-    margin: 10px auto;
+    padding: 10px;
+    display: block;
 }
 
 .menu a:hover {
     background-color: rgba(206, 233, 42, 1);
 }
 
-.contentLeft {
-    grid-area: contentLeft;
+/* content-container -> displays content on other pages */
+.content-container {
+    grid-area: content-container;
+}
+
+.dropdown::after {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+    font-size: 200%;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    padding-top: 50px;
+}
+
+.show {
+    display:block;
+}
+
+.contentUp {
+    grid-area: contentUp;
     font-size: 18px;
     padding-left: 20px;
     display: inline-block;
 }
 
-.contentRight {
-    grid-area: contentRight;
+.contentDown {
+    grid-area: contentDown;
     font-size: 18px;
     padding: 10px;
     text-align: center;
