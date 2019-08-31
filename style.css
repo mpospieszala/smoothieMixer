@@ -110,7 +110,7 @@ li::before {
     font-family: 'FontAwesome';
     font-size: 200%;
     padding: 20px;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .dropdown {
