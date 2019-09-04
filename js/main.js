@@ -37,7 +37,7 @@ function generateRecipe()
     var vegetableChb = document.getElementById("vegetable").checked;
     var extraChb = document.getElementById("extra").checked;
     
-    randomElementsArray = []; 
+   
 
     if(getItemNum("itemsNum")==="")
     {
@@ -107,6 +107,7 @@ function generateRecipe()
             event.preventDefault();
         };
     };
+    randomElementsArray = []; 
 };
 
 function errorMsgs(msg)
@@ -144,5 +145,12 @@ function showRecipe()
 
 function getRandomElement(element)
 {
-    randomElementsArray.push(element.replace("","<li>"));
+    if(randomElementsArray.indexOf(element) === -1)
+    {
+        randomElementsArray.push(element.replace("","<li>"));
+    }
+    else
+    {
+        getRandomElement(element);
+    };
 };
