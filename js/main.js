@@ -88,7 +88,6 @@ function generateRecipe()
             event.preventDefault();
         }
     }
-    //TODO: wywalić ; z }
 
     getRandomItems(fruitNum, fruits, randomElementsArray);
     getRandomItems(vegeNum,vegetables,randomElementsArray);
