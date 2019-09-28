@@ -53,6 +53,7 @@ hr {
 li {
     list-style-type: none;
     font-weight: 300;
+    text-align: justify;
 }
 
 li::before {
