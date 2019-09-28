@@ -1,24 +1,24 @@
-var fruits = 
+const fruits = 
 [
     "banan", "jabłko", "ananas"
 ];
 
 
 
-var vegetables = 
+const vegetables = 
 [
     "jarmuż", "szpinak", "marchewka"
 ];
 
 
-var extras = 
+const extras = 
 [
     "orzechy laskowe", "odżywka białkowa waniliowa"
 ];
 
 
 
-var liquids = 
+const liquids = 
 [
     "mleko", "woda", "mleko kokosowe"
 ];
