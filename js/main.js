@@ -28,6 +28,7 @@ function generateRecipe()
     {
         errorMsgs("Błąd! ");
         event.preventDefault();
+        return;
     }
     else if(getItemNum("itemsNum")>="1")
     {
@@ -82,12 +83,13 @@ function generateRecipe()
         {
             errorMsgs("Wybierz składniki (nie tylko same dodatki ;) ) Nie chcesz mieć smoothie z samych orzeszków!") ;
             event.preventDefault();
+            return;
         }
+        getRandomItems(fruitNum, fruits, randomElementsArray);
+        getRandomItems(vegeNum,vegetables,randomElementsArray);
+        getRandomItems(extraNum,extras,randomElementsArray);
+        randomElementsArray.push(getRandomLiquid());
     }
-
-    getRandomItems(fruitNum, fruits, randomElementsArray);
-    getRandomItems(vegeNum,vegetables,randomElementsArray);
-    getRandomItems(extraNum,extras,randomElementsArray);
     
     var makeLi = function(part, index, array)
     {
@@ -95,7 +97,7 @@ function generateRecipe()
     }
     randomElementsArray.forEach(makeLi);
 
-    document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray.join(" ") + "<li>" + getRandomLiquid() + "</li>" + "</ul>";
+    document.getElementsByClassName("recipe")[0].innerHTML = "<ul>" + randomElementsArray.join(" ") + "</ul>";
     randomElementsArray = [];
 }
 
