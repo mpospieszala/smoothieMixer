@@ -1,8 +1,6 @@
 var i;
 var opacity = 1;
 
-
-
 function getItemNum(elementId)
 {
     var numItemVal = document.getElementById(elementId).value;
@@ -13,8 +11,6 @@ function getRandomLiquid()
 {
     return liquids[Math.floor(Math.random() * liquids.length)];
 };
-
-
 
 function generateRecipe()
 {
@@ -145,4 +141,3 @@ function showRecipe()
         x.style.display = "block";
     }
 }
-
